@@ -51,7 +51,7 @@ composer install
 
 ### 3. Database
 
-Use the feed.sql file in web/files to create the database.
+Use the `feed.sql` file in "web/files" to create the database.
 
 Edit the file `config/db.php` with real credentials, for example:
 
