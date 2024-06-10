@@ -126,7 +126,7 @@ class ImportXmlController extends Controller
         }
     }
     
-    public function actionImport($file = null ) {
+    public function actionImport($file = null) {
         
         if($file == null) {
             $file = yii::$app->params['default_source_file'];
