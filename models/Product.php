@@ -105,4 +105,6 @@ class Product extends \yii\db\ActiveRecord
     {
         return $this->hasOne(Category::class, ['idcategory' => 'category_idcategory'])->inverseOf('products');
     }
+    
+
 }
