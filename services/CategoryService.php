@@ -18,7 +18,6 @@ class CategoryService implements EntityServiceInterface
     {
         $category = $this->categoryRepository->findByAttribute('name', $name) ?? new Category();
         
-        // Check 
         if($category->isNewRecord) {
             $category->name = $name;
             $this->categoryRepository->save($category);

@@ -12,6 +12,12 @@ $config = [
         '@npm'   => '@vendor/npm-asset',
     ],
     'container' => [
+        'definitions' => [
+            app\repositories\ProductRepositoryInterface::class => app\repositories\ProductRepository::class,
+            app\repositories\BrandRepositoryInterface::class => app\repositories\BrandRepository::class,
+            app\repositories\CategoryRepositoryInterface::class => app\repositories\CategoryRepository::class,
+            app\services\ProductServiceInterface::class => app\services\ProductService::class,
+        ],
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
             'cookieValidationKey' => 'rCMAY7B2qcbjw3-0JOf2p5NqVmskXsZ8',

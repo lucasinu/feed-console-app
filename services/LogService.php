@@ -15,7 +15,7 @@ class LogService {
             $spreadsheet = new Spreadsheet();
             $worksheet = $spreadsheet->getActiveSheet();
             
-            $header = ['Action', 'Instance type', 'Instance', 'Description'];
+            $header = ['Action', 'Log type', 'Instance type', 'Instance', 'Description'];
             $worksheet->fromArray($header, null, 'A1');
 
             foreach ($log_data as $rowNum => $rowData) {
