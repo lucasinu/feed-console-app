@@ -35,6 +35,9 @@ class ImportXmlController extends Controller
         }
 
         if (file_exists($file)) {
+            
+            print_r("Start importing...\n");
+            
             $star_time = microtime(true);
             $reader = new XMLReader();
             $reader->open($file);
@@ -47,12 +50,13 @@ class ImportXmlController extends Controller
             
             while ($reader->name === 'item') {
                 $node = new \SimpleXMLElement($reader->readOuterXml());
-                $this->productService->processProductNode($node, $this->log_data, $this->new_items);
+                $this->productService->processProductNode($node, $this->log_data, $this->new_items);              
                 $this->items++;
                 $reader->next('item');
             }
+            
             $reader->close();
-
+            
             $end_time = microtime(true);
             $exec_time = $end_time - $star_time;
 
@@ -66,4 +70,5 @@ class ImportXmlController extends Controller
             return ExitCode::IOERR;
         }
     }
+
 }
